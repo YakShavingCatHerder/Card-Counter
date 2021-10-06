@@ -25,7 +25,7 @@
  <!-- Modal Code -->
 <div class="remodal" data-remodal-id="modal">
   <button data-remodal-action="close" class="remodal-close"></button>
-  <h1 class="modalHeader">The Counter</h1>
+  <h1 class="modalHeader">Omega II Counter</h1>
   <p>A utility that will asisst in the Blackjack card-counting process. For entertainment purposes only.</p>
   <h2>How to Use</h2>
   <div class="listContainer">
@@ -38,66 +38,43 @@
   <p class="listItem"><strong>Bet Amount:</strong> The value of your bet based on the True Count.
   </p>
   <br>
-  <p class="modalCredits">&copy; Yashar Sahaleh | <a class="credits" href="http://yasharsahaleh.com/">YasharSahaleh.com</a></p>
 </div>
 
 <div class="navbar">
-  <div class="title">The Counter</div>
+  <div class="title">Omega II Counter</div>
 </div>
 
 <div class="content">
   <a class="helpIcon" href="#modal">?</a>
   <h1 class="firstHeader">Card Value</h1>
   <ul class="card-buttons">
-    <li class="decreaseCount"><a href="#">10-A</a></li>
-    <li class="increaseCount"><a href="#">2</a></li>
-    <li class="increaseCount"><a href="#">3</a></li>
-    <li class="increaseCount"><a href="#">4</a></li>
-    <li class="increaseCount"><a href="#">5</a></li>
-    <li class="increaseCount"><a href="#">6</a></li>
-    <li class="noCount"><a href="#">7</a></li>
-    <li class="noCount"><a href="#">8</a></li>
-    <li class="noCount"><a href="#">9</a></li>
-  </ul>
-  <h1>Decks Remaining</h1>
-
-  <ul class="segmented-control">
-    <li class="segmented-control__item" onclick="deckCount1()">
-      <input class="segmented-control__input" type="radio" value="1" name="option" id="option-1" checked>
-      <label class="segmented-control__label" for="option-1">1</label>
-    </li>
-    <li class="segmented-control__item" onclick="deckCount2()">
-      <input class="segmented-control__input" type="radio" value="2" name="option" id="option-2">
-      <label class="segmented-control__label" for="option-2">2</label>
-    </li>
-    <li class="segmented-control__item" onclick="deckCount3()">
-      <input class="segmented-control__input" type="radio" value="3" name="option" id="option-3" checked>
-      <label class="segmented-control__label" for="option-3">3</label>
-    </li>
-    <li class="segmented-control__item" onclick="deckCount4()">
-      <input class="segmented-control__input" type="radio" value="4" name="option" id="option-4" checked>
-      <label class="segmented-control__label" for="option-4">4</label>
-    </li>
-    <li class="segmented-control__item" onclick="deckCount5()">
-      <input class="segmented-control__input" type="radio" value="5" name="option" id="option-5" checked>
-      <label class="segmented-control__label" for="option-5">5</label>
-    </li>
-    <li class="segmented-control__item" onclick="deckCount6()">
-      <input class="segmented-control__input" type="radio" value="6" name="option" id="option-6" checked>
-      <label class="segmented-control__label" for="option-6">6</label>
-    </li>
-    <li class="segmented-control__item" onclick="deckCount7()">
-      <input class="segmented-control__input" type="radio" value="7" name="option" id="option-7" checked>
-      <label class="segmented-control__label" for="option-7">7</label>
-    </li>
-    <li class="segmented-control__item" onclick="deckCount8()">
-      <input class="segmented-control__input" type="radio" value="8" name="option" id="option-8" checked>
-      <label class="segmented-control__label" for="option-8">8</label>
-    </li>
+    <li class="increaseCount1"><a href="#">2</a></li>
+    <li class="increaseCount1"><a href="#">3</a></li>
+    <li class="increaseCount2"><a href="#">4</a></li>
+    <li class="increaseCount2"><a href="#">5</a></li>
+    <li class="increaseCount2"><a href="#">6</a></li>
+    <li class="increaseCount1"><a href="#">7</a></li>
+    <li class="noCount8"><a href="#">8</a></li>
+    <li class="decreaseCount1"><a href="#">9</a></li>
+    <li class="decreaseCount2"><a href="#">10-K</a></li>
+    <li class="noCountA"><a href="#">A</a></li>
   </ul>
 
   <br class="mobileHide">
 
+  <div class="divTable">
+    <div class="divTableBody">
+      <div class="divTableRow">
+        <div class="divTableCellHeading">Decks Remaining</div>
+        <div class="divTableCellHeading">Aces Left</div>
+      </div>
+      <div class="divTableRow">
+        <div id="decksRemaining">8</div>
+        <div id="acesLeft">32</div>
+      </div>
+    </div>
+  </div>
+  
   <div class="divTable">
     <div class="divTableBody">
       <div class="divTableRow">
@@ -107,7 +84,7 @@
       </div>
       <div class="divTableRow">
         <div id="runningCount">0</div>
-        <div id="trueCount">0.0</div>
+        <div id="trueCount">0</div>
         <div id="bet">Bet 1x</div>
       </div>
     </div>

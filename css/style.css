@@ -268,17 +268,11 @@ ul.deck-buttons > li {
   padding: 3px 10px;
 }
 
-#result {
-  display: table-cell;
-  padding: 3px 10px;
-}
-
-#trueCount {
-  display: table-cell;
-  padding: 3px 10px;
-}
-
-#bet {
+#acesLeft,
+#result,
+#trueCount,
+#bet
+{
   display: table-cell;
   padding: 3px 10px;
 }

@@ -1,102 +1,106 @@
 // Set default variable values
+var deckCount = 8;
+var cards_dealt = 0;
+var aces_seen = 0;
+var count = 0;
 
-
-// Get Deck Count from Segmented Controller
-
-function deckCount1() {
-  var deckCount = 1;
-}
-
-function deckCount2() {
-  var deckCount = 2;
-}
-
-function deckCount3() {
-  var deckCount = 3;
-}
-
-function deckCount4() {
-  var deckCount = 4;
-}
-
-function deckCount5() {
-  var deckCount = 5;
-}
-
-function deckCount6() {
-  var deckCount = 6;
-}
-
-function deckCount7() {
-  var deckCount = 7;
-}
-
-function deckCount8() {
-  var deckCount = 8;
-}
 $(function() {
-
-  var deckCount = 8;
-  var count = 0;
-
-  // User Clicks 10-A The Running Count Goes Down by 1
-
-  $(".decreaseCount").click(function() {
+  console.log(count);
+  // User Clicks 9 The Running Count Goes Down by 1
+  $(".decreaseCount1").click(function() {
     count = parseInt($("#runningCount").text());
     $("#runningCount").text(count - 1);
     count = parseInt($("#runningCount").text());
     $("#trueCount").html(calc_true_count(deckCount, count));
     calc_bet_amt(parseFloat($("#trueCount").html()));
-
-
-
+    cards_dealt += 1;
+    $("#decksRemaining").html(calc_decks_remaining(deckCount, cards_dealt));
   });
 
-  // User Clicks 2-6 The Running Count Goes Up by 1
+  // User Clicks 10-K The Running Count Goes Down by 2
+  $(".decreaseCount2").click(function() {
+    count = parseInt($("#runningCount").text());
+    $("#runningCount").text(count - 2);
+    count = parseInt($("#runningCount").text());
+    $("#trueCount").html(calc_true_count(deckCount, count));
+    calc_bet_amt(parseFloat($("#trueCount").html()));
+    cards_dealt += 1;
+    $("#decksRemaining").html(calc_decks_remaining(deckCount, cards_dealt));
+  });
 
-  $(".increaseCount").click(function() {
+  // User Clicks 2, 3, or 7 The Running Count Goes Up by 1
+  $(".increaseCount1").click(function() {
     count = parseInt($("#runningCount").text());
     $("#runningCount").text(count + 1);
     count = parseInt($("#runningCount").text());
     $("#trueCount").html(calc_true_count(deckCount, count));
     calc_bet_amt(parseFloat($("#trueCount").html()));
-
+    cards_dealt += 1;
+    $("#decksRemaining").html(calc_decks_remaining(deckCount, cards_dealt));
   });
 
-  // User Clicks 7-9 The Running Count Doesn"t Change
+  // User Clicks 4, 5, or 6 The Running Count Goes Up by 2
+  $(".increaseCount2").click(function() {
+    count = parseInt($("#runningCount").text());
+    $("#runningCount").text(count + 2);
+    count = parseInt($("#runningCount").text());
+    $("#trueCount").html(calc_true_count(deckCount, count));
+    calc_bet_amt(parseFloat($("#trueCount").html()));
+    cards_dealt += 1;
+    $("#decksRemaining").html(calc_decks_remaining(deckCount, cards_dealt));
+  });
 
-  $(".noCount").click(function() {
+  // User Clicks 8, The Running Count Doesn"t Change
+  $(".noCount8").click(function() {
     count = parseInt($("#runningCount").text());
     $("#runningCount").text(count);
     count = parseInt($("#runningCount").text());
     $("#trueCount").html(calc_true_count(deckCount, count));
     calc_bet_amt(parseFloat($("#trueCount").html()));
-
-
+    cards_dealt += 1;
+    $("#decksRemaining").html(calc_decks_remaining(deckCount, cards_dealt));
   });
 
-  $(".segmented-control__input").click(function() {
-    deckCount = $('input[name=option]:checked').val();
+  // User Clicks A, The Running Count Doesn"t Change; count aces
+  $(".noCountA").click(function() {
+    count = parseInt($("#runningCount").text());
+    $("#runningCount").text(count);
     count = parseInt($("#runningCount").text());
     $("#trueCount").html(calc_true_count(deckCount, count));
+    calc_aces_remaining();
     calc_bet_amt(parseFloat($("#trueCount").html()));
-
-
+    cards_dealt += 1;
+    $("#decksRemaining").html(calc_decks_remaining(deckCount, cards_dealt));
+    aces_seen += 1;
+    $("#acesLeft").html(calc_aces_remaining(deckCount, aces_seen));
   });
-});
-// Reset All Values to their Defaults
 
+
+});
+
+// Reset All Values to their Defaults
 function resetValues() {
+  $("#decksRemaining").text("8");
+  $("#acesLeft").text("32");
   $("#runningCount").text("0");
   $("#trueCount").text("0.0");
   $("#bet").text("Bet 1x");
-  $("input[name=option]").filter("[value='8']").prop("checked", true);
+}
+
+function calc_decks_remaining(deckCount, cards_dealt) {
+  var total_cards_in_shoe = (deckCount*52);
+  var decksRemaining = ((total_cards_in_shoe-cards_dealt)/52).toFixed(1);
+  $("#decksRemaining").html(decksRemaining);
+}
+
+function calc_aces_remaining(deckCount, aces_seen) {
+  var total_aces = (deckCount*4);
+  var acesRemaining = (total_aces-aces_seen);
+  $("#acesLeft").html(acesRemaining);
 }
 
 function calc_true_count(deck, count) {
   var cal_value = parseInt(count, 10) / parseInt(deck, 10);
-  //return Math.round(cal_value,1);
-
   return cal_value.toFixed(1);
 }
 
