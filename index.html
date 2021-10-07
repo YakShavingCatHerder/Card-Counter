@@ -42,14 +42,12 @@
 
   <div class="navbar">
     <div class="title">Omega II Counter</div>
-    <!-- <a class="resetIcon"><input type="submit" value="Reset" class="title" onclick="resetValues()"></a> -->
       <a class="helpIcon" href="#modal">?</a>
   </div>
 
   <div class="row">
     <div class="column">
       <div class="content">
-
         <h1 class="firstHeader">Card Value</h1>
         <ul class="card-buttons">
           <li class="increaseCount1"><a href="#">2</a></li>
@@ -63,59 +61,51 @@
           <li class="decreaseCount2"><a href="#">10-K</a></li>
           <li class="noCountA"><a href="#">A</a></li>
         </ul>
-
-        <br class="mobileHide">
       </div>
     </div>
 
     <div class="column">
-      <div class="divTable">
-        <div class="divTableBody">
-          <div class="divTableRow">
-            <div class="divTableCellHeading">Decks Remaining</div>
-            <div class="divTableCellHeading">Aces Left</div>
-          </div>
-          <div class="divTableRow">
-            <div id="decksRemaining">8</div>
-            <div id="acesLeft">32</div>
-          </div>
-        </div>
+      <div class="content">
+        <table class="styled-table">
+          <thead>
+          <tr>
+            <th class=headingDecks">Decks Remaining</th>
+            <th class=headingAces">Aces Remaining</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td id="decksRemaining">8</td>
+            <td id="acesRemaining">32</td>
+          </tr>
+          </tbody>
+        </table>
+        <table class="styled-table">
+          <thead>
+          <tr>
+            <th class=headingRunningCount">Running Count</th>
+            <th class=headingTrueCount">True Count</th>
+            <th class=headingBetAmount">Bet Amount</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td id="runningCount">0</td>
+            <td id="trueCount">0</td>
+            <td id="bet">Bet 1x</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="divTable">
-        <div class="divTableBody">
-          <div class="divTableRow">
-            <div class="divTableCellHeading">Running Count</div>
-            <div class="divTableCellHeading">True Count</div>
-            <div class="divTableCellHeading">Bet Amount</div>
-          </div>
-          <div class="divTableRow">
-            <div id="runningCount">0</div>
-            <div id="trueCount">0</div>
-            <div id="bet">Bet 1x</div>
-          </div>
-          <br class="mobileHide">
-        </div>
-      </div>
-      <br class="mobileHide">
-      <input type="submit" value="Reset" class="reset-button" onclick="resetValues()">
-      <br>
-      <br class="miniSpacing">
     </div>
 
     <div class="column">
-      <div class="divTable">
-        <div class="divTableBody">
-          <div class="divTableRow">
-            <div class="divTableCellHeading">Table goes here</div>
-          </div>
-          <div class="divTableRow">
-            <div id="strategyTable">xxxx</div>
-          </div>
-        </div>
+      <div>
+        <a><img src="./assets/strategy.png" id="imageStrategy" /></a>
       </div>
     </div>
   </div>
-
+ 
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
   <!-- Counter JavaScript -->
@@ -125,3 +115,5 @@
 
   </body>
 </html>
+
+<!--       <a class="resetIcon"><input type="submit" value="Reset" onclick="resetValues()"></a>
