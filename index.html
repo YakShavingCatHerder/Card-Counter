@@ -44,59 +44,83 @@
   <div class="title">Omega II Counter</div>
 </div>
 
-<div class="content">
-  <a class="helpIcon" href="#modal">?</a>
-  <h1 class="firstHeader">Card Value</h1>
-  <ul class="card-buttons">
-    <li class="increaseCount1"><a href="#">2</a></li>
-    <li class="increaseCount1"><a href="#">3</a></li>
-    <li class="increaseCount2"><a href="#">4</a></li>
-    <li class="increaseCount2"><a href="#">5</a></li>
-    <li class="increaseCount2"><a href="#">6</a></li>
-    <li class="increaseCount1"><a href="#">7</a></li>
-    <li class="noCount8"><a href="#">8</a></li>
-    <li class="decreaseCount1"><a href="#">9</a></li>
-    <li class="decreaseCount2"><a href="#">10-K</a></li>
-    <li class="noCountA"><a href="#">A</a></li>
-  </ul>
+// .row {
+// display: flex;
+// }
 
-  <br class="mobileHide">
+// .column {
+// flex: 50%;
+// }
+<div class="row">
+  <div class="column">
+    <div class="content">
+      <a class="helpIcon" href="#modal">?</a>
+      <h1 class="firstHeader">Card Value</h1>
+      <ul class="card-buttons">
+        <li class="increaseCount1"><a href="#">2</a></li>
+        <li class="increaseCount1"><a href="#">3</a></li>
+        <li class="increaseCount2"><a href="#">4</a></li>
+        <li class="increaseCount2"><a href="#">5</a></li>
+        <li class="increaseCount2"><a href="#">6</a></li>
+        <li class="increaseCount1"><a href="#">7</a></li>
+        <li class="noCount8"><a href="#">8</a></li>
+        <li class="decreaseCount1"><a href="#">9</a></li>
+        <li class="decreaseCount2"><a href="#">10-K</a></li>
+        <li class="noCountA"><a href="#">A</a></li>
+      </ul>
 
-  <div class="divTable">
-    <div class="divTableBody">
-      <div class="divTableRow">
-        <div class="divTableCellHeading">Decks Remaining</div>
-        <div class="divTableCellHeading">Aces Left</div>
+      <br class="mobileHide">
+
+      <div class="divTable">
+        <div class="divTableBody">
+          <div class="divTableRow">
+            <div class="divTableCellHeading">Decks Remaining</div>
+            <div class="divTableCellHeading">Aces Left</div>
+          </div>
+          <div class="divTableRow">
+            <div id="decksRemaining">8</div>
+            <div id="acesLeft">32</div>
+          </div>
+        </div>
       </div>
-      <div class="divTableRow">
-        <div id="decksRemaining">8</div>
-        <div id="acesLeft">32</div>
+
+      <div class="divTable">
+        <div class="divTableBody">
+          <div class="divTableRow">
+            <div class="divTableCellHeading">Running Count</div>
+            <div class="divTableCellHeading">True Count</div>
+            <div class="divTableCellHeading">Bet Amount</div>
+          </div>
+          <div class="divTableRow">
+            <div id="runningCount">0</div>
+            <div id="trueCount">0</div>
+            <div id="bet">Bet 1x</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  
-  <div class="divTable">
-    <div class="divTableBody">
-      <div class="divTableRow">
-        <div class="divTableCellHeading">Running Count</div>
-        <div class="divTableCellHeading">True Count</div>
-        <div class="divTableCellHeading">Bet Amount</div>
-      </div>
-      <div class="divTableRow">
-        <div id="runningCount">0</div>
-        <div id="trueCount">0</div>
-        <div id="bet">Bet 1x</div>
+  <div class="column">
+    <div class="divTable">
+      <div class="divTableBody">
+        <div class="divTableRow">
+          <div class="divTableCellHeading">Running Count</div>
+          <div class="divTableCellHeading">True Count</div>
+          <div class="divTableCellHeading">Bet Amount</div>
+        </div>
+        <div class="divTableRow">
+          <div id="runningCount">0</div>
+          <div id="trueCount">0</div>
+          <div id="bet">Bet 1x</div>
+        </div>
       </div>
     </div>
+    <br class="mobileHide">
+    <input type="submit" value="Reset" class="reset-button" onclick="resetValues()">
+    <br>
+    <br class="miniSpacing">
   </div>
-
-  <br class="mobileHide">
-  <!-- <input type="submit" value="Undo" class="undo-button"> -->
-  <input type="submit" value="Reset" class="reset-button" onclick="resetValues()">
-  <br>
-  <br class="miniSpacing">
 </div>
-
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 

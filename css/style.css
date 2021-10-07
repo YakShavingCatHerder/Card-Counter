@@ -65,15 +65,19 @@ a.helpIcon {
     padding-top: 16px;
 }
 
+.row {
+ display: flex;
+}
+
+.column {
+ flex: 50%;
+}
+
 .content {
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.85) 100%);
-  /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.85) 100%);
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.85) 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#cc000000', GradientType=0);
-  /* IE6-9 */
   margin: 0 auto;
   margin-top: 90px;
   box-sizing: border-box;
@@ -471,13 +475,6 @@ button:focus {
     border-top-right-radius: 0px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-  }
-  .segmented-control {
-    padding-bottom: 8px;
-  }
-  .segmented-control__label {
-    padding-top: 8px;
-    padding-bottom: 8px;
   }
 
   .divTable {
