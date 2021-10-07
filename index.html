@@ -23,54 +23,53 @@
   <body>
 
  <!-- Modal Code -->
-<div class="remodal" data-remodal-id="modal">
-  <button data-remodal-action="close" class="remodal-close"></button>
-  <h1 class="modalHeader">Omega II Counter</h1>
-  <p>A utility that will asisst in the Blackjack card-counting process. For entertainment purposes only.</p>
-  <h2>How to Use</h2>
-  <div class="listContainer">
-  <p class="listItem">1. Select the number of decks remaining.</p>
-  <p class="listItem">2. Click/Tap the value of each card dealt.</p>
+  <div class="remodal" data-remodal-id="modal">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <h1 class="modalHeader">Omega II Counter</h1>
+    <p>A utility that will asisst in the Blackjack card-counting process. For entertainment purposes only.</p>
+    <h2>How to Use</h2>
+    <div class="listContainer">
+    <p class="listItem">1. Select the number of decks remaining.</p>
+    <p class="listItem">2. Click/Tap the value of each card dealt.</p>
+    </div>
+    <h2>Definitions</h2>
+    <p class="listItem"><strong>Running Count:</strong> The count derived by adding or subtracting every card that you see in each shoe.</p>
+    <p class="listItem"><strong>True Count:</strong> The value of the running count divided by the amount of decks remaining.</p>
+    <p class="listItem"><strong>Bet Amount:</strong> The value of your bet based on the True Count.
+    </p>
+    <br>
   </div>
-  <h2>Definitions</h2>
-  <p class="listItem"><strong>Running Count:</strong> The count derived by adding or subtracting every card that you see in each shoe.</p>
-  <p class="listItem"><strong>True Count:</strong> The value of the running count divided by the amount of decks remaining.</p>
-  <p class="listItem"><strong>Bet Amount:</strong> The value of your bet based on the True Count.
-  </p>
-  <br>
-</div>
 
-<div class="navbar">
-  <div class="title">Omega II Counter</div>
-</div>
+  <div class="navbar">
+    <div class="title">Omega II Counter</div>
+  </div>
 
-// .row {
-// display: flex;
-// }
+//Display card buttons
+  <div class="row">
+    <div class="column">
+      <div class="content">
+        <a class="helpIcon" href="#modal">?</a>
 
-// .column {
-// flex: 50%;
-// }
-<div class="row">
-  <div class="column">
-    <div class="content">
-      <a class="helpIcon" href="#modal">?</a>
-      <h1 class="firstHeader">Card Value</h1>
-      <ul class="card-buttons">
-        <li class="increaseCount1"><a href="#">2</a></li>
-        <li class="increaseCount1"><a href="#">3</a></li>
-        <li class="increaseCount2"><a href="#">4</a></li>
-        <li class="increaseCount2"><a href="#">5</a></li>
-        <li class="increaseCount2"><a href="#">6</a></li>
-        <li class="increaseCount1"><a href="#">7</a></li>
-        <li class="noCount8"><a href="#">8</a></li>
-        <li class="decreaseCount1"><a href="#">9</a></li>
-        <li class="decreaseCount2"><a href="#">10-K</a></li>
-        <li class="noCountA"><a href="#">A</a></li>
-      </ul>
+        <h1 class="firstHeader">Card Value</h1>
+        <ul class="card-buttons">
+          <li class="increaseCount1"><a href="#">2</a></li>
+          <li class="increaseCount1"><a href="#">3</a></li>
+          <li class="increaseCount2"><a href="#">4</a></li>
+          <li class="increaseCount2"><a href="#">5</a></li>
+          <li class="increaseCount2"><a href="#">6</a></li>
+          <li class="increaseCount1"><a href="#">7</a></li>
+          <li class="noCount8"><a href="#">8</a></li>
+          <li class="decreaseCount1"><a href="#">9</a></li>
+          <li class="decreaseCount2"><a href="#">10-K</a></li>
+          <li class="noCountA"><a href="#">A</a></li>
+        </ul>
 
-      <br class="mobileHide">
+        <br class="mobileHide">
+      </div>
+    </div> //End Column 1
 
+//Display advantage information
+    <div class="column">
       <div class="divTable">
         <div class="divTableBody">
           <div class="divTableRow">
@@ -83,7 +82,6 @@
           </div>
         </div>
       </div>
-
       <div class="divTable">
         <div class="divTableBody">
           <div class="divTableRow">
@@ -96,40 +94,37 @@
             <div id="trueCount">0</div>
             <div id="bet">Bet 1x</div>
           </div>
+          <br class="mobileHide">
         </div>
       </div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="divTable">
-      <div class="divTableBody">
-        <div class="divTableRow">
-          <div class="divTableCellHeading">Running Count</div>
-          <div class="divTableCellHeading">True Count</div>
-          <div class="divTableCellHeading">Bet Amount</div>
-        </div>
-        <div class="divTableRow">
-          <div id="runningCount">0</div>
-          <div id="trueCount">0</div>
-          <div id="bet">Bet 1x</div>
+      <br class="mobileHide">
+      <input type="submit" value="Reset" class="reset-button" onclick="resetValues()">
+      <br>
+      <br class="miniSpacing">
+    </div> //End Column 2
+
+//Display optimal strategy table for current true count
+    <div class="column">
+      <div class="divTable">
+        <div class="divTableBody">
+          <div class="divTableRow">
+            <div class="divTableCellHeading">Table goes here</div>
+          </div>
+          <div class="divTableRow">
+            <div id="strategyTable">xxxx</div>
+          </div>
         </div>
       </div>
-    </div>
-    <br class="mobileHide">
-    <input type="submit" value="Reset" class="reset-button" onclick="resetValues()">
-    <br>
-    <br class="miniSpacing">
-  </div>
-</div>
+    </div> //End Column 3
+
+  </div> //End Row class
+
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
-
+  <script src="js/jquery.js"></script>
 <!-- Counter JavaScript -->
-<script src="js/custom.js"></script>
-
+  <script src="js/custom.js"></script>
 <!-- Modal JavaScript -->
-<script src="js/remodal.min.js"></script>
+  <script src="js/remodal.min.js"></script>
 
-</body>
-
+  </body>
 </html>
