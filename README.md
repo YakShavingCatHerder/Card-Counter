@@ -1,18 +1,19 @@
 # The Counter
 A Blackjack card-counting calculator that provides Running Count, True Count, and Bet Amounts in realtime. 
 
-<img src="http://i.imgur.com/FpIjtgW.png" width="512">
-
-## How to use
-1. Select the number of decks remaining.
-2. Click/Tap the value of each card dealt.
+<img src="https://i.imgur.com/QhlcDXM.png" width="700">
 
 ### Definitions
 * **Running Count:** The count derived by adding or subtracting every card that you see in each shoe
-  * 2-6 = +1
-  * 7-9 = 0
-  * 10-Ace = -1 
+  * 2, 3, 7 = +1
+  * 4, 5, 6 = +2
+  *    8    =  0
+  *    9    = -1
+  *  10-K   = -2 
+  *    A    =  0
+
 * **True Count:** The value of the running count divided by the amount of decks remaining
+
 * **Bet Amount:** The value of your bet based on the True Count.
   * This has been set to follow the following (can be changed to your liking):
     * True count < 2 = Bet 1x
